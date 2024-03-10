@@ -104,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
                 // Set the age in the ageEditText
                 finalAgeEditText.setText(String.valueOf(age));
 
+                // Check if the conditions checkbox is checked
+                if (!conditionsCheckBox.isChecked()) {
+                    // Conditions checkbox is not checked, show an error message
+                    Toast.makeText(MainActivity.this, "Please accept the terms and conditions", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Display details in a popup
                 showDetailsPopup(nameEditText.getText().toString(), email, phoneNumber, dobStr, String.valueOf(age));
             }
